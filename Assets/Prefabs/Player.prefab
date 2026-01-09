@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 1247641747927970522}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 5380879262676198425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.51, y: -5.52, z: 0}
+  m_LocalPosition: {x: -7.1, y: -3.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -247,7 +247,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -293,7 +293,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.02836895, y: 0.055252314}
+  m_Offset: {x: 0.04424131, y: 0.055252314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -303,7 +303,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0280972, y: 0.9062476}
+  m_Size: {x: 0.5706527, y: 0.9062476}
   m_EdgeRadius: 0
 --- !u!58 &7763154084354237246
 CircleCollider2D:
@@ -335,7 +335,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -375,8 +375,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.08134341, y: 0.053176045}
-  m_Size: {x: 0.95578146, y: 1.0147917}
+  m_Offset: {x: 0.02415824, y: 0.044781864}
+  m_Size: {x: 0.4239583, y: 1.0315801}
   m_Direction: 0
 --- !u!114 &6939065577089555204
 MonoBehaviour:
