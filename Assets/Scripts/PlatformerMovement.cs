@@ -172,7 +172,7 @@ public class PlatformerMovement : MonoBehaviour
             jumpInput = true;
             jumpReleased = false;
             bool isJumping = Mathf.Abs(moveInput.y) > 0.01f;
-            animator.SetBool("isJumping", !isGrounded);
+            animator.SetBool("isJumping", true);
         }
 
         if (context.canceled && controlEnabled)
