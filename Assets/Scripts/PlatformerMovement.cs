@@ -41,7 +41,7 @@ public class PlatformerMovement : MonoBehaviour
         groundCheckCollider.isTrigger = true;
         
         // Set gravity scale to 0 so player won't "fall" 
-        rb.gravityScale = 0;
+        rb.gravityScale = 3f;
 
         animator = GetComponent<Animator>();
     }
@@ -53,7 +53,7 @@ public class PlatformerMovement : MonoBehaviour
         // Apply jump-input:
         if (jumpInput && wasGrounded)
         {
-            velocity.y = jumpForce;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpInput = false;
         }
         
@@ -91,7 +91,7 @@ public class PlatformerMovement : MonoBehaviour
     {
         isGrounded = IsGrounded();
         ApplyGravity();
-        rb.linearVelocity = velocity;
+        rb.linearVelocity = new Vector2(velocity.x, rb.linearVelocity.y);
         
         // Write movement animation code here. (Suggestion: send your current velocity into the Animator for both the x- and y-axis.)
     }
@@ -152,8 +152,8 @@ public class PlatformerMovement : MonoBehaviour
         if (controlEnabled)
         {
             moveInput = context.ReadValue<Vector2>().normalized;
-            bool isMoving = Mathf.Abs(moveInput.x) > 0.01f || moveInput.x < -0.01f;
-            animator.SetBool("isRunning", true);
+            bool isRunning = Mathf.Abs(moveInput.x) > 0.01f || moveInput.x < -0.01f;
+            animator.SetBool("isRunning", isRunning);
         }
         else
         {
@@ -172,7 +172,7 @@ public class PlatformerMovement : MonoBehaviour
             jumpInput = true;
             jumpReleased = false;
             bool isJumping = Mathf.Abs(moveInput.y) > 0.01f;
-            animator.SetBool("isJumping", true);
+            animator.SetBool("isJumping", !isGrounded);
         }
 
         if (context.canceled && controlEnabled)
